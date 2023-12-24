@@ -1,4 +1,6 @@
 import cupImg from '../assets/Milk-Tea-being-poured-into-cup-Premium-vector-PNG-1-removebg-preview.png'
+import cupImg1 from '../assets/greencup.jpeg'
+import cupImg2 from '../assets/yellowcup.jpeg'
 import { FaArrowRight } from "react-icons/fa6";
 
 
@@ -6,15 +8,48 @@ const Products = () => {
     const products = [
         {
             image: cupImg,
-            title: "White coffee"
+            title: "White coffee",
+            colors: ['black', 'green', 'yellow'],
+            imgClicked: {
+                'black': true,
+                'green': false,
+                'yellow': false,
+            },
+            imgLinked: {
+                'black': cupImg,
+                'green': cupImg1,
+                'yellow': cupImg2
+            }
         },
         {
             image: cupImg,
-            title: "White coffee"
+            title: "White coffee",
+            colors: ['black', 'green', 'yellow'],
+            imgClicked: {
+                'black': true,
+                'green': false,
+                'yellow': false,
+            },
+            imgLinked: {
+                'black': cupImg,
+                'green': cupImg1,
+                'yellow': cupImg2
+            }
         },
         {
             image: cupImg,
-            title: "White coffee"
+            title: "White coffee",
+            colors: ['black', 'green', 'yellow'],
+            imgClicked: {
+                'black': true,
+                'green': false,
+                'yellow': false,
+            },
+            imgLinked: {
+                'black': cupImg,
+                'green': cupImg1,
+                'yellow': cupImg2
+            }
         },
     ]
     return (
