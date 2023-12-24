@@ -63,16 +63,32 @@ const Products = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-32 py-10'>
                 {
                     products.map((product, i) => (
-                        <div key={i} className='bg-amber-300 shadow-lg flex flex-col justify-center items-center relative p-20 w-96 h-96  rounded-lg'>
+                        <div key={i} className='bg-amber-300 shadow-lg flex flex-col justify-center items-center relative p-20 w-96 h-96 rounded-lg'>
                             <div>
-                                <h1 className='text-amber-800 text-5xl font-bold absolute top-0 left-0 py-6 px-3'>{product.title}</h1>
-                                <img src={product.image} alt="" className='absolute top-0 left-20 w-[400px] h-[400px] object-contain px-2' />
+                                <h1 className='text-amber-800 text-4xl font-bold absolute top-0 left-0 py-6 px-3'>{product.title}</h1>
+                                <div className='absolute top-0 left-20 px-2'>
+                                    {Object.keys(product.imgClicked).map((item) => {
+                                        if (product.imgClicked[item]) {
+                                            return (
+                                                <img className='w-[400px] h-[400px] object-contain' key={item} src={product.imgLinked[item]} alt={product.title} />
+                                            )
+                                        }
+                                        else {
+                                            return null
+                                        }
+                                    })}
+                                </div>
                             </div>
 
-                            <div className='absolute bottom-0 left-10 pb-10'>
-                                <button>
-                                    <FaArrowRight />
-                                </button>
+                            <div className='flex flex-col'>
+                                <div className='absolute bottom-0 left-10 pb-10'>
+                                    <button>
+                                        <FaArrowRight />
+                                    </button>
+                                </div>
+                                {/* <div className='absolute bottom-0 left-20 mb-2'>
+                                    
+                                </div> */}
                             </div>
                         </div>
                     ))
